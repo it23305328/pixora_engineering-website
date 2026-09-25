@@ -1,0 +1,93 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+    darkMode: "class",
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            colors: {
+                "tertiary-fixed-dim": "#c0c8cd",
+                "primary-container": "#0b1a3d",
+                "surface-container-high": "#e6e8eb",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#7d858a",
+                "secondary-fixed": "#ffdea8",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#38466b",
+                "on-surface-variant": "#45464e",
+                "on-secondary-fixed": "#271900",
+                "primary-fixed-dim": "#b8c5f2",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#505d84",
+                "surface-container-highest": "#e0e3e6",
+                "error": "#ba1a1a",
+                "on-primary-fixed": "#0b1a3d",
+                "surface": "#f7f9fc",
+                "on-error-container": "#93000a",
+                "on-background": "#191c1e",
+                "on-tertiary-fixed-variant": "#40484c",
+                "on-tertiary-fixed": "#151d21",
+                "on-secondary-fixed-variant": "#5e4200",
+                "secondary": "#7c5800",
+                "tertiary-container": "#151d21",
+                "surface-container": "#eceef1",
+                "on-error": "#ffffff",
+                "surface-variant": "#e0e3e6",
+                "primary-fixed": "#dae2ff",
+                "inverse-on-surface": "#eff1f4",
+                "secondary-container": "#feb700",
+                "tertiary": "#000101",
+                "on-surface": "#191c1e",
+                "surface-dim": "#d8dadd",
+                "inverse-surface": "#2d3133",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#7683ac",
+                "primary": "#000003",
+                "tertiary-fixed": "#dce4e9",
+                "inverse-primary": "#b8c5f2",
+                "surface-container-low": "#f2f4f7",
+                "secondary-fixed-dim": "#ffba20",
+                "outline": "#75777f",
+                "surface-bright": "#f7f9fc",
+                "outline-variant": "#c6c6cf",
+                "background": "#f7f9fc",
+                "on-secondary-container": "#6b4b00",
+                "on-secondary": "#ffffff"
+            },
+            borderRadius: {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            spacing: {
+                "margin-mobile": "20px",
+                "max-width": "1440px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "unit": "8px"
+            },
+            fontFamily: {
+                "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                "body-lg": ["Inter", "sans-serif"],
+                "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                "headline-xl": ["Hanken Grotesk", "sans-serif"],
+                "body-md": ["Inter", "sans-serif"],
+                "headline-md": ["Hanken Grotesk", "sans-serif"],
+                "label-sm": ["Inter", "sans-serif"]
+            },
+            fontSize: {
+                "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+            }
+        },
+    },
+    plugins: [],
+}

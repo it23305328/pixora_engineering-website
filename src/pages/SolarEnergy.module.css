@@ -1,0 +1,202 @@
+.heroSection {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 6rem;
+    padding-top: 8rem;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 3, 0.9), rgba(0, 0, 3, 0.5), transparent);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.heroTextWrapper {
+    max-width: 768px;
+}
+
+.heroTitle {
+    font-size: 64px;
+    color: var(--on-primary);
+    margin-bottom: 1.5rem;
+    text-wrap: balance;
+    line-height: 1.1;
+}
+
+.heroSubtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    text-wrap: balance;
+}
+
+.heroButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .heroButtons {
+        flex-direction: row;
+    }
+}
+
+.glassPanel {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(198, 198, 207, 0.4);
+}
+
+.glassPanel:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+.revealOnScroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.isVisible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Process Section */
+.processSection {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: var(--surface);
+}
+
+@media (min-width: 768px) {
+    .processSection {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+.sectionHeader {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+}
+
+@media (min-width: 768px) {
+    .sectionHeader {
+        margin-bottom: 6rem;
+    }
+}
+
+.sectionTitle {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.sectionDesc {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+}
+
+.processGrid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .processGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.decorativeLine {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .decorativeLine {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(117, 119, 127, 0.3);
+        z-index: 0;
+    }
+}
+
+.processStep {
+    position: relative;
+    z-index: 10;
+}
+
+.stepNumber {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-headline);
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--surface);
+}
+
+.processStep h3 {
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.processStep p {
+    color: var(--on-surface-variant);
+}

@@ -1,0 +1,132 @@
+.admin-project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f9fc;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+}
+
+.admin-project-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.admin-project-card h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #0b1a3d;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 28px;
+    text-align: center;
+}
+
+.admin-message {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.admin-message.success {
+    background-color: #e6f4ea;
+    color: #1e8e3e;
+    border: 1px solid #ceead6;
+}
+
+.admin-message.error {
+    background-color: #fce8e6;
+    color: #d93025;
+    border: 1px solid #fad2cf;
+}
+
+.admin-project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #45464e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #c6c6cf;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    background-color: #fcfcfc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e5a919;
+    box-shadow: 0 0 0 3px rgba(229, 169, 25, 0.2);
+}
+
+.admin-submit-btn {
+    background-color: #000003;
+    color: #ffffff;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+}
+
+.admin-submit-btn:hover:not(:disabled) {
+    background-color: #0b1a3d;
+}
+
+.admin-submit-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.admin-submit-btn:disabled {
+    background-color: #75777f;
+    cursor: not-allowed;
+}
+
+.image-preview-container {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #c6c6cf;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: #f7f9fc;
+}
+
+.image-preview {
+    max-width: 100%;
+    object-fit: contain;
+}

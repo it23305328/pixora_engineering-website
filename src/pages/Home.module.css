@@ -1,0 +1,245 @@
+/* Hero Section */
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 3, 0.4);
+    z-index: 10;
+}
+
+.heroBg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--on-primary);
+}
+
+.heroTitle {
+    font-size: 64px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.heroButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .heroButtons {
+        flex-direction: row;
+    }
+}
+
+.heroStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    background-color: rgba(0, 0, 3, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .heroStats {
+        gap: 4rem;
+    }
+}
+
+.statItem {
+    text-align: center;
+}
+
+.statBorder {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.statNumber {
+    font-family: var(--font-headline);
+    font-size: 32px;
+    color: var(--secondary-fixed);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 14px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Solutions Section */
+.solutionsSection {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+    .solutionsSection {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.sectionTitle {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.divider {
+    width: 4rem;
+    height: 4px;
+    background-color: var(--secondary);
+    margin: 0 auto 1.5rem auto;
+}
+
+.sectionDesc {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.solutionsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .solutionsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.solutionCard {
+    position: relative;
+    height: 384px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cardBg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7s ease;
+}
+
+.solutionCard:hover .cardBg {
+    transform: scale(1.05);
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 3, 0.9), rgba(0, 0, 3, 0.4), transparent);
+}
+
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.cardContent h3 {
+    font-size: 32px;
+    color: var(--on-primary);
+    margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.3s ease;
+}
+
+.solutionCard:hover .cardContent p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CTA */
+.ctaSection {
+    background-color: var(--primary-container);
+    color: var(--on-primary);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .ctaSection {
+        padding: 8rem 0;
+    }
+}
+
+.ctaTitle {
+    font-size: 64px;
+    margin-bottom: 1.5rem;
+}
+
+.ctaDesc {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+}
