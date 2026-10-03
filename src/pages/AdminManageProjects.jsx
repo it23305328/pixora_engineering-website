@@ -12,16 +12,10 @@ const AdminManageProjects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Edit Modal State
-    const [editingProject, setEditingProject] = useState(null);
-    const [editForm, setEditForm] = useState({ title: '', category: '', description: '', image_url: '' });
-    const [newImageFile, setNewImageFile] = useState(null);
-    const [saving, setSaving] = useState(false);
-
+    // Edit Modal State removed since we now route to full edit page
     useEffect(() => {
         fetchProjects();
     }, []);
-
     const fetchProjects = async () => {
         try {
             setLoading(true);
@@ -34,7 +28,6 @@ const AdminManageProjects = () => {
             setLoading(false);
         }
     };
-
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this project?")) {
             try {
@@ -46,46 +39,8 @@ const AdminManageProjects = () => {
             }
         }
     };
-
     const handleEditClick = (project) => {
-        setEditingProject(project);
-        setEditForm({
-            title: project.title,
-            category: project.category,
-            description: project.description,
-            image_url: project.image_url
-        });
-        setNewImageFile(null);
-    };
-
-    const handleEditSubmit = async (e) => {
-        e.preventDefault();
-        setSaving(true);
-        try {
-            let finalImageUrl = editForm.image_url;
-
-            if (newImageFile) {
-                finalImageUrl = await uploadImageToCloudinary(newImageFile);
-            }
-
-            const updates = {
-                title: editForm.title,
-                category: editForm.category,
-                description: editForm.description,
-                image_url: finalImageUrl
-            };
-
-            await updateProject(editingProject.id, updates);
-
-            // Update local state
-            setProjects(projects.map(p => p.id === editingProject.id ? { ...p, ...updates } : p));
-            setEditingProject(null);
-        } catch (error) {
-            console.error("Error updating project:", error);
-            alert("Failed to update project.");
-        } finally {
-            setSaving(false);
-        }
+        navigate(`/admin/edit-project/${project.id}`);
     };
 
     const handleLogout = async () => {
@@ -145,68 +100,6 @@ const AdminManageProjects = () => {
                 </div>
             )}
 
-            {/* Edit Modal */}
-            {editingProject && (
-                <div className="modal-overlay">
-                    <div className="modal-content admin-project-form">
-                        <h2>Edit Project</h2>
-                        <form onSubmit={handleEditSubmit}>
-                            <div className="form-group">
-                                <label>Title</label>
-                                <input
-                                    type="text"
-                                    value={editForm.title}
-                                    onChange={(e) => setEditForm({ ...editForm, title: e.target.value })}
-                                    required
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label>Category</label>
-                                <select
-                                    value={editForm.category}
-                                    onChange={(e) => setEditForm({ ...editForm, category: e.target.value })}
-                                >
-                                    <option value="Solar Energy">Solar Energy</option>
-                                    <option value="Construction">Construction</option>
-                                    <option value="Elevator Solutions">Elevator Solutions</option>
-                                </select>
-                            </div>
-
-                            <div className="form-group">
-                                <label>Replace Image (Optional)</label>
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={(e) => setNewImageFile(e.target.files[0])}
-                                />
-                                {editForm.image_url && !newImageFile && (
-                                    <div style={{ marginTop: '10px', fontSize: '12px' }}>
-                                        Current: <a href={editForm.image_url} target="_blank" rel="noreferrer">View Image</a>
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="form-group">
-                                <label>Description</label>
-                                <textarea
-                                    value={editForm.description}
-                                    onChange={(e) => setEditForm({ ...editForm, description: e.target.value })}
-                                    required
-                                    rows="4"
-                                />
-                            </div>
-
-                            <div className="modal-actions">
-                                <button type="button" className="cancel-btn" onClick={() => setEditingProject(null)} disabled={saving}>Cancel</button>
-                                <button type="submit" className="save-btn" disabled={saving}>
-                                    {saving ? 'Saving...' : 'Save Changes'}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

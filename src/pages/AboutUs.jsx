@@ -1,26 +1,12 @@
 import React from 'react';
+import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
     return (
         <div className="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
             {/* TopNavBar */}
-            <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
-                <div className="flex justify-between items-center h-16 px-gutter max-w-max-width mx-auto">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">PIXORA GROUP</Link>
-                    <div className="hidden md:flex gap-8">
-                        <Link className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95" to="/">Home</Link>
-                        <Link className="font-label-sm text-label-sm uppercase tracking-wider text-primary dark:text-primary-fixed border-b-2 border-secondary active:scale-95 transition-transform" to="/about">About</Link>
-                        <Link className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95" to="/solar-energy">Solar Energy</Link>
-                        <Link className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95" to="/construction">Construction</Link>
-                        <Link className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95" to="/elevators">Elevator Parts</Link>
-                    </div>
-                    <Link to="/projects" className="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider h-12 px-6 rounded flex items-center justify-center hover:bg-surface-tint transition-all duration-300 active:scale-95 hidden md:flex">Get a Quote</Link>
-                    <button className="md:hidden text-primary">
-                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>menu</span>
-                    </button>
-                </div>
-            </nav>
+            <Navbar />
             <main className="pt-16">
                 {/* Cinematic Hero */}
                 <section className="relative min-h-[819px] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-20">
@@ -141,3 +127,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+

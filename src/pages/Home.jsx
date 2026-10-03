@@ -1,29 +1,12 @@
 import React from 'react';
+import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
         <div className="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
             {/* TopNavBar */}
-            <nav className="bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md w-full top-0 sticky h-14 md:h-16 border-b border-outline-variant/20 dark:border-outline/20 shadow-sm dark:shadow-none z-50">
-                <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-full">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
-                        PIXORA GROUP
-                    </Link>
-                    <div className="hidden md:flex space-x-8 items-center h-full">
-                        <Link to="/" className="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1 h-full flex items-center font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300">Home</Link>
-                        <Link to="/about" className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300">About</Link>
-                        <Link to="/solar-energy" className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300">Solar Energy</Link>
-                        <Link to="/construction" className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300">Construction</Link>
-                        <Link to="/elevators" className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300">Elevator Parts</Link>
-                    </div>
-                    <div className="flex items-center">
-                        <button className="bg-primary text-on-primary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 scale-95 active:scale-90 transition-transform">
-                            Get a Quote
-                        </button>
-                    </div>
-                </div>
-            </nav>
+            <Navbar />
 
             <main>
                 {/* Hero Section */}
@@ -450,3 +433,4 @@ const Home = () => {
 };
 
 export default Home;
+

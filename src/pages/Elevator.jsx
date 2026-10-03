@@ -1,31 +1,13 @@
 import React from 'react';
+import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
+import RecentProjects from '../components/common/RecentProjects';
 
 const Elevator = () => {
     return (
         <div className="bg-background text-on-background font-body-md antialiased selection:bg-secondary/20 selection:text-primary">
             {/* TopNavBar */}
-            <nav className="bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md docked full-width top-0 sticky h-14 md:h-16 border-b border-outline-variant/20 dark:border-outline/20 shadow-sm dark:shadow-none z-50">
-                <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-full">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
-                        PIXORA GROUP
-                    </Link>
-                    <div className="hidden md:flex items-center space-x-8 h-full">
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm h-full flex items-center hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-4" to="/">Home</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm h-full flex items-center hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-4" to="/about">About</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm h-full flex items-center hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-4" to="/solar-energy">Solar Energy</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm h-full flex items-center hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-4" to="/construction">Construction</Link>
-                        <Link className="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1 font-label-sm text-label-sm h-full flex items-center px-4" to="/elevators">Elevator Parts</Link>
-                    </div>
-                    <Link to="/projects" className="hidden md:inline-flex bg-primary text-on-primary font-label-sm text-label-sm h-[48px] px-6 items-center justify-center rounded scale-95 active:scale-90 transition-transform">
-                        Get a Quote
-                    </Link>
-                    {/* Mobile Menu Toggle */}
-                    <button className="md:hidden text-primary">
-                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>menu</span>
-                    </button>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Hero Section */}
             <header className="relative w-full min-h-[80vh] flex items-center overflow-hidden">
@@ -150,51 +132,7 @@ const Elevator = () => {
             </section>
 
             {/* Recent Elevator Projects */}
-            <section className="py-20 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
-                <div className="max-w-max-width mx-auto">
-                    <div className="mb-12 flex justify-between items-end">
-                        <div>
-                            <h2 className="font-headline-lg text-headline-lg text-primary mb-4">Recent Elevator Projects</h2>
-                            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Showcasing our precision engineering in real-world applications.</p>
-                        </div>
-                        <Link to="/projects" className="hidden md:inline-flex text-secondary font-label-sm items-center hover:underline">
-                            View All Projects <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                        <div className="bg-surface-container-lowest rounded overflow-hidden shadow-sm border border-outline-variant/20">
-                            <div className="h-48 bg-surface-dim relative">
-                                <img alt="Hotel elevator" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC62dNuZXHmg5ltr8EQBfK9EPWQ72I3HUTrlVmbQ4Ku1DRtRW-ARUroN0hDTDxJ1886z183Nk4tw8EVJmb3o6lK4UWczaBb2a1ERsfs0BKZ0ZhRPutJgMkmmSDEEyX050o2doMnx-1IHbW8ocGoDq8D6H8uUxbnP76FUKauouxhzAdA2mKFwsowmleioM3uK-WeTOE5ZRHpjgwLePd7HiK-6TMuGPxeU4k_WfdnACqPxG1WcQatdlXYVw" />
-                            </div>
-                            <div className="p-6">
-                                <span className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 block">Hospitality</span>
-                                <h3 className="font-headline-sm text-xl font-bold mb-2">Grand Azure Hotel</h3>
-                                <p className="text-sm text-on-surface-variant">Complete modernization of 6 high-speed passenger cars with advanced dispatching.</p>
-                            </div>
-                        </div>
-                        <div className="bg-surface-container-lowest rounded overflow-hidden shadow-sm border border-outline-variant/20">
-                            <div className="h-48 bg-surface-dim relative">
-                                <img alt="Office tower elevator" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE46jvSyN5ns0DNd8HjyvmRVXZ03uHepN9c3cjNZtVc2hgmde21rU6TUmqBdV4TSdPCikDqEV8-7aXIYuW8r4yb4QoKV8Tyvd19xO4lfzGg87_5Y3yJt6cKoeSzkET_pRAbG-NCtyZCOlSFRA0H6qTxyh8R4OfLLNXE-Y31Fe1BAkj5fN8avK2dIsJA4fcZ_lvxaOX-drKrxW1cDpXmihhA9AKQYwWVJ9efi2hbtaGUgPiBKjzimhlEg" />
-                            </div>
-                            <div className="p-6">
-                                <span className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 block">Commercial</span>
-                                <h3 className="font-headline-sm text-xl font-bold mb-2">Metro Office Tower</h3>
-                                <p className="text-sm text-on-surface-variant">Installation of regenerative drives and destination dispatch systems for 12 cars.</p>
-                            </div>
-                        </div>
-                        <div className="bg-surface-container-lowest rounded overflow-hidden shadow-sm border border-outline-variant/20">
-                            <div className="h-48 bg-surface-dim relative">
-                                <img alt="Industrial elevator" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoTy1126uae8NUme6sp144vpbl0BrTd90CWJRfdQXhI_18X951L0_VGSa269yE5RbFesx7QH1nsGfY80BvrFGaTBIv3ijkrrkF4rj4VkYP7yBKOfSIlynM_a-eV1lPJMG1a_IZO2B8AD6QtKXNwTgEBAyiZ00cm-uKnG7a9FhBZ6J9o3L0c4DGsn-g_vWBA15dM7a1CLujh9WUEXvhyFbj_AVdRuxmzF__HLk5vFDUgz3xDZR6ohKLw" />
-                            </div>
-                            <div className="p-6">
-                                <span className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 block">Industrial</span>
-                                <h3 className="font-headline-sm text-xl font-bold mb-2">Apex Logistics Hub</h3>
-                                <p className="text-sm text-on-surface-variant">Heavy-duty freight elevator components engineered for high-capacity continuous use.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <RecentProjects category="elevator" />
 
             {/* Why Choose Us */}
             <section className="py-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
@@ -309,3 +247,4 @@ const Elevator = () => {
 };
 
 export default Elevator;
+

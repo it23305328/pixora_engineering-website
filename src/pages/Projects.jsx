@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../components/layout/Navbar';
+import { Link, useNavigate } from 'react-router-dom';
 import { getProjects } from '../services/projectService';
 import './ProjectsList.css';
 
@@ -7,6 +8,7 @@ const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -27,20 +29,7 @@ const Projects = () => {
     return (
         <div className="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
             {/* TopNavBar */}
-            <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out glass-nav">
-                <div className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-16">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
-                        PIXORA GROUP
-                    </Link>
-                    <div className="hidden md:flex space-x-8 items-center">
-                        <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors duration-300" to="/">Home</Link>
-                        <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors duration-300" to="/solar-energy">Solar Energy</Link>
-                        <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors duration-300" to="/construction">Construction</Link>
-                        <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-container hover:text-secondary transition-colors duration-300" to="/elevators">Elevator Solutions</Link>
-                        <Link className="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary hover:text-secondary transition-colors duration-300" to="/projects">Projects</Link>
-                    </div>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Main Content using Vanilla CSS */}
             <main className="flex-grow pt-24 bg-[#f7f9fc]">
@@ -58,7 +47,7 @@ const Projects = () => {
                         <div className="projects-grid">
                             {projects.length > 0 ? (
                                 projects.map((project) => (
-                                    <div key={project.id} className="project-card">
+                                    <div key={project.id} className="project-card cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate(`/projects/${project.slug || project.id}`)}>
                                         <div className="project-image-wrapper">
                                             <div className="project-category">{project.category}</div>
                                             <img
@@ -94,3 +83,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

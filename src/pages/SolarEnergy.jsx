@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
+import RecentProjects from '../components/common/RecentProjects';
 
 const SolarEnergy = () => {
     useEffect(() => {
@@ -21,26 +23,7 @@ const SolarEnergy = () => {
     return (
         <div className="bg-background text-on-background font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
             {/* TopNavBar */}
-            <nav className="bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md docked full-width top-0 sticky h-14 md:h-16 border-b border-outline-variant/20 dark:border-outline/20 shadow-sm dark:shadow-none z-50">
-                <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-full">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight scale-95 active:scale-90 transition-transform">
-                        PIXORA GROUP
-                    </Link>
-                    <div className="hidden md:flex items-center gap-6">
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 px-3 py-2 rounded" to="/">Home</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 px-3 py-2 rounded" to="/about">About</Link>
-                        <Link className="text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1 font-label-sm text-label-sm px-3 py-2" to="/solar-energy">Solar Energy</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 px-3 py-2 rounded" to="/construction">Construction</Link>
-                        <Link className="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 px-3 py-2 rounded" to="/elevators">Elevator Parts</Link>
-                    </div>
-                    <Link to="/projects" className="hidden md:flex bg-primary text-on-primary font-label-sm text-label-sm px-6 h-12 rounded items-center justify-center hover:bg-primary/90 transition-colors scale-95 active:scale-90 transition-transform">
-                        Get a Quote
-                    </Link>
-                    <button className="md:hidden text-primary p-2">
-                        <span className="material-symbols-outlined">menu</span>
-                    </button>
-                </div>
-            </nav>
+            <Navbar />
             <main>
                 {/* Hero Section */}
                 <section className="relative min-h-[80vh] flex items-end pb-24 pt-32">
@@ -162,44 +145,7 @@ const SolarEnergy = () => {
                 </section>
 
                 {/* Recent Solar Projects */}
-                <section className="py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 reveal-on-scroll">
-                        <div className="max-w-2xl">
-                            <h2 className="font-headline-md text-headline-md text-primary mb-4">Recent Solar Projects</h2>
-                            <p className="font-body-lg text-body-lg text-on-surface-variant">A showcase of our engineered solutions powering businesses across the region.</p>
-                        </div>
-                        <Link className="text-secondary font-label-sm text-label-sm flex items-center gap-2 hover:underline mt-6 md:mt-0" to="/projects">View All Projects <span className="material-symbols-outlined text-sm">arrow_forward</span></Link>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <Link to="/projects" className="group cursor-pointer reveal-on-scroll">
-                            <div className="overflow-hidden rounded-xl mb-6 relative h-[400px]">
-                                <img alt="Project 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrYQ9isbUhjgd02BuzPWvkVHob6y8PcMnqbdOpBGf8EpxNJNoRgiF1XbcIk5N8jEgd8WIocev2L94v-kP2ZLwG0zXU89AfxtHmJGsttbdDJEyCUsT8CnekMl1z7D_QzFVG-FnEeu-H8qW1SnXDzODgphF6FqTpghMdnNPNMjDxTeH37PF3-ac9DGPD1V1yvC8ZVNaqmStUFqrUK-tadi14WGWCptIkiPpGkWgg2hg17pl3Cuz_1gu_Vg" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">Commercial Solar</div>
-                            </div>
-                            <h3 className="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">Tech Hub Microgrid</h3>
-                            <p className="text-on-surface-variant text-sm mb-4">Colombo, Sri Lanka</p>
-                            <span className="text-primary font-label-sm text-label-sm flex items-center gap-2 group-hover:text-secondary transition-colors">View Project <span className="material-symbols-outlined text-sm">arrow_forward</span></span>
-                        </Link>
-                        <Link to="/projects" className="group cursor-pointer reveal-on-scroll" style={{ transitionDelay: '100ms' }}>
-                            <div className="overflow-hidden rounded-xl mb-6 relative h-[400px]">
-                                <img alt="Project 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0fRA4NoB3gvzoDFMHC3bmCy7Ta7qdd2M11d3p4Jx7Nox8aFQZIfugKA9brrDJnBPXc--R0roqjxWidoNHBFzxKLGcNNa659NQrL5M_2a_0GcoQBpffw9kRCQ2ohnVD5O0Qr6K8jjJBUAcZA2LrBTiPRKLdRxKlKAVgu0fUwGnMJ0EBvOeqixKLyNIfb3sNC7elEGa5CREbg6si5dzbjpLfzFBNkQe_zbXbrOSC73Z2YmRVizjV_ZRhg" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">Industrial Solar</div>
-                            </div>
-                            <h3 className="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">Manufacturing Plant Array</h3>
-                            <p className="text-on-surface-variant text-sm mb-4">Kandy, Sri Lanka</p>
-                            <span className="text-primary font-label-sm text-label-sm flex items-center gap-2 group-hover:text-secondary transition-colors">View Project <span className="material-symbols-outlined text-sm">arrow_forward</span></span>
-                        </Link>
-                        <Link to="/projects" className="group cursor-pointer reveal-on-scroll" style={{ transitionDelay: '200ms' }}>
-                            <div className="overflow-hidden rounded-xl mb-6 relative h-[400px]">
-                                <img alt="Project 3" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvUMJPMsFkJR50_8J5KbMDeqx4CJ3--xpAPdrVxp9vp7Z-roWKnS5J4dILSn4Hbl-yBbPGnhq0SWrXJgEAGrB3VJ6FG_xsNSxba3KrkUhGnkcyIWKxjhK1s7t6iFNsRD43A3mIvRDs2EjqyVcbIxQMOOo3RjGzrAx7aH9_T6PI5TyZ_finEO-pzKHUnZBMO_PZq6NrfZrLOU4_iTFluxA4DFYJ-Psw8sxEBfeiSMqsAjuZNMYRZMXFzQ" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">Utility Scale</div>
-                            </div>
-                            <h3 className="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-secondary transition-colors">Coastal Solar Farm</h3>
-                            <p className="text-on-surface-variant text-sm mb-4">Galle, Sri Lanka</p>
-                            <span className="text-primary font-label-sm text-label-sm flex items-center gap-2 group-hover:text-secondary transition-colors">View Project <span className="material-symbols-outlined text-sm">arrow_forward</span></span>
-                        </Link>
-                    </div>
-                </section>
+                <RecentProjects category="solar" />
 
                 {/* Why Choose Us */}
                 <section className="py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto bg-primary text-on-primary rounded-[2rem] my-12 relative overflow-hidden">
@@ -351,3 +297,4 @@ const SolarEnergy = () => {
 };
 
 export default SolarEnergy;
+

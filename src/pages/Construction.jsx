@@ -1,23 +1,13 @@
 import React from 'react';
+import Navbar from '../components/layout/Navbar';
 import { Link } from 'react-router-dom';
+import RecentProjects from '../components/common/RecentProjects';
 
 const Construction = () => {
     return (
         <div className="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
             {/* Navigation */}
-            <nav className="bg-surface/80 dark:bg-primary-container/80 backdrop-blur-md font-headline-md text-headline-md font-label-sm text-label-sm docked full-width top-0 sticky h-14 md:h-16 border-b border-outline-variant/20 dark:border-outline/20 shadow-sm dark:shadow-none z-50">
-                <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-full">
-                    <Link to="/" className="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">PIXORA GROUP</Link>
-                    <ul className="hidden md:flex items-center space-x-gutter">
-                        <li><Link className="font-label-sm text-label-sm text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-3 py-2 rounded" to="/">Home</Link></li>
-                        <li><Link className="font-label-sm text-label-sm text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-3 py-2 rounded" to="/about">About</Link></li>
-                        <li><Link className="font-label-sm text-label-sm text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-3 py-2 rounded" to="/solar-energy">Solar Energy</Link></li>
-                        <li><Link className="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1 hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-3 pt-2" to="/construction">Construction</Link></li>
-                        <li><Link className="font-label-sm text-label-sm text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 duration-300 px-3 py-2 rounded" to="/elevators">Elevator Parts</Link></li>
-                    </ul>
-                    <Link to="/projects" className="font-label-sm text-label-sm bg-primary text-on-primary h-12 px-6 rounded flex items-center justify-center scale-95 active:scale-90 transition-transform">Get a Quote</Link>
-                </div>
-            </nav>
+            <Navbar />
             <main>
                 {/* Hero Section */}
                 <section className="relative min-h-[819px] flex items-center pt-24 pb-16">
@@ -172,40 +162,7 @@ const Construction = () => {
                 </section>
 
                 {/* Recent Projects */}
-                <section className="py-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
-                    <div className="flex justify-between items-end mb-12">
-                        <h2 className="font-headline-lg text-headline-lg text-primary">Recent Projects</h2>
-                        <Link className="font-label-sm text-label-sm text-primary hover:text-secondary flex items-center gap-1 transition-colors" to="/projects">
-                            View All <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                        <div className="group cursor-pointer">
-                            <div className="h-64 rounded overflow-hidden mb-4">
-                                <img alt="Modern office building" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4UzAxd8vI9vMaPDbKSQXvtq1T0aQXDaOsMCjECk6-MJmVLSLTxdpGcxuDaVwBr1gtw2AKHc6sbtEKc48IB-R6faEkkHMgsOMTxPqk5ID1uAUneMldTOwcAXVJ5m4_hksf_MbpU8JlfRnPw4C0V7Bk7mAohnwf7q6PM3aNwPyOXWUFrTQ3h9SHBv7uEmUbr61agAGd90McmPJgnNGGM754zQCCFBCLSzUJw4Jz3ub8_TsYJ1oiKOiQMg" />
-                            </div>
-                            <div className="font-label-sm text-label-sm text-secondary mb-1">2023 • Chicago, IL</div>
-                            <h3 className="font-headline-md text-[24px] text-primary mb-2 group-hover:text-secondary-container transition-colors">Nexus Tower</h3>
-                            <p className="font-body-md text-body-md text-on-surface-variant">A 40-story commercial skyscraper featuring sustainable energy integration.</p>
-                        </div>
-                        <div className="group cursor-pointer">
-                            <div className="h-64 rounded overflow-hidden mb-4">
-                                <img alt="Industrial complex" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7NaMnvtaiTBilvskDVATF2HYaxu6w29xcBudHvmcdLncoCTuXU3SUTOPTP-w3c9nK8qo1E9PrKHHdDvaj2SdO6ADg5ifOR_T5V5Hp60rvt5flFZrgS6vSY-KvY-5d-im5kArwZGJ9uQu3RrZDEBMmom-8KMh3me5QQU8t3aDNdeIZL2ZZyImRH45mmOrGsKQoUYxyL3Tl_FwWfAm3HTbM8tipHGkfqVtx9GWi1J06vN9GmrnJ-NmiFA" />
-                            </div>
-                            <div className="font-label-sm text-label-sm text-secondary mb-1">2022 • Houston, TX</div>
-                            <h3 className="font-headline-md text-[24px] text-primary mb-2 group-hover:text-secondary-container transition-colors">Apex Industrial Park</h3>
-                            <p className="font-body-md text-body-md text-on-surface-variant">A state-of-the-art manufacturing facility built for optimal workflow.</p>
-                        </div>
-                        <div className="group cursor-pointer">
-                            <div className="h-64 rounded overflow-hidden mb-4">
-                                <img alt="Bridge construction" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlWW95TkW6mOo5qq3NSxCt-oybti7z29QzzwzwP9zAbKlbKCNp16kDvXOzv_5Yftotf8aeRmO3Ewqv3mF8mDeL7ezMjy6Gi23W08GtRiGTSodyKJDmpP7lP9W4ruKl4DgtlMahd0tHnBFoxQ16fD_dM9uer6m5fNvClPfsMZeh8uj9ZsHcv9hNZwN4oL2RZTa4UNuVDcd4rE3S6Ku6XOS4TocW1K8CmaNt8im2nExLBeuPDbjHTaFKsQ" />
-                            </div>
-                            <div className="font-label-sm text-label-sm text-secondary mb-1">2023 • Seattle, WA</div>
-                            <h3 className="font-headline-md text-[24px] text-primary mb-2 group-hover:text-secondary-container transition-colors">Harbor Viaduct</h3>
-                            <p className="font-body-md text-body-md text-on-surface-variant">Critical infrastructure spanning 2 miles over active waterways.</p>
-                        </div>
-                    </div>
-                </section>
+                <RecentProjects category="construction" />
 
                 {/* Why Choose Us */}
                 <section className="bg-surface-container-low py-24">
@@ -296,3 +253,4 @@ const Construction = () => {
 };
 
 export default Construction;
+

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -11,27 +12,34 @@ import AdminAddProject from './pages/AdminAddProject';
 import AdminManageProjects from './pages/AdminManageProjects';
 import AdminLogin from './pages/AdminLogin';
 import ProtectedRoute from './components/ProtectedRoute';
+import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/solar-energy" element={<SolarEnergy />} />
-        <Route path="/construction" element={<Construction />} />
-        <Route path="/elevators" element={<Elevator />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/solar-energy' element={<SolarEnergy />} />
+        <Route path='/construction' element={<Construction />} />
+        <Route path='/elevators' element={<Elevator />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/about' element={<AboutUs />} />
+        <Route path='/projects/:slug' element={<ProjectDetails />} />
 
         {/* Admin Routes */}
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/add-project" element={
+        <Route path='/admin/login' element={<AdminLogin />} />
+        <Route path='/admin/add-project' element={
           <ProtectedRoute>
             <AdminAddProject />
           </ProtectedRoute>
         } />
-        <Route path="/admin/manage-projects" element={
+        <Route path='/admin/edit-project/:id' element={
+          <ProtectedRoute>
+            <AdminAddProject />
+          </ProtectedRoute>
+        } />
+        <Route path='/admin/manage-projects' element={
           <ProtectedRoute>
             <AdminManageProjects />
           </ProtectedRoute>
@@ -42,3 +50,4 @@ function App() {
 }
 
 export default App;
+
