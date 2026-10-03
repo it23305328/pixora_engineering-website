@@ -413,6 +413,9 @@ const Home = () => {
                         <Link className="font-body-md text-sm text-on-primary/70 dark:text-on-tertiary/70 hover:text-secondary-fixed transition-colors hover:translate-x-1 duration-200 cursor-pointer" to="#">Contact Support</Link>
                         <Link className="font-body-md text-sm text-on-primary/70 dark:text-on-tertiary/70 hover:text-secondary-fixed transition-colors hover:translate-x-1 duration-200 cursor-pointer" to="#">Project Tenders</Link>
                         <Link className="font-body-md text-sm text-on-primary/70 dark:text-on-tertiary/70 hover:text-secondary-fixed transition-colors hover:translate-x-1 duration-200 cursor-pointer" to="#">Careers &amp; Fellowships</Link>
+                        <Link className="font-body-md text-sm text-on-primary/40 hover:text-secondary-fixed transition-colors hover:translate-x-1 duration-200 cursor-pointer flex items-center gap-2 mt-4" to="/admin/manage-projects">`r`n                            <span className="material-symbols-outlined text-[14px]">admin_panel_settings</span>
+                            Admin Access
+                        </Link>
                     </div>
                 </div>
                 <div className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mt-12 pt-8 border-t border-outline-variant/10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
