@@ -7,7 +7,9 @@ import Construction from './pages/Construction';
 import Elevator from './pages/Elevator';
 import Projects from './pages/Projects';
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 import AdminAddProject from './pages/AdminAddProject';
 import AdminManageProjects from './pages/AdminManageProjects';
 import AdminLogin from './pages/AdminLogin';
@@ -25,6 +27,7 @@ function App() {
         <Route path='/elevators' element={<Elevator />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/about' element={<AboutUs />} />
+        <Route path='/contact' element={<ContactUs />} />
         <Route path='/projects/:slug' element={<ProjectDetails />} />
 
         {/* Admin Routes */}
@@ -45,6 +48,7 @@ function App() {
           </ProtectedRoute>
         } />
       </Routes>
+      <WhatsAppButton />
     </>
   );
 }

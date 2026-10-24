@@ -27,15 +27,17 @@ const Navbar = () => {
 
                 <div className="hidden md:flex space-x-8 items-center h-full">
                     <Link className={getLinkClass('/')} to="/">Home</Link>
-                    <Link className={getLinkClass('/about')} to="/about">About</Link>
+
                     <Link className={getLinkClass('/solar-energy')} to="/solar-energy">Solar Energy</Link>
                     <Link className={getLinkClass('/construction')} to="/construction">Construction</Link>
                     <Link className={getLinkClass('/elevators')} to="/elevators">Elevator Parts</Link>
                     <Link className={getLinkClass('/projects')} to="/projects">Projects</Link>
+                    <Link className={getLinkClass('/about')} to="/about">About</Link>
+                    <Link className={getLinkClass('/contact')} to="/contact">Contact</Link>
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <Link to="/projects" className="hidden md:block bg-primary text-on-primary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 scale-95 active:scale-90 touch-manipulation">
+                    <Link to="/contact" className="hidden md:block bg-primary text-on-primary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-surface-container-high/50 dark:hover:bg-primary-container/50 transition-all duration-300 scale-95 active:scale-90 touch-manipulation">
                         Get a Quote
                     </Link>
                     <button
@@ -60,7 +62,8 @@ const Navbar = () => {
                         <Link to="/construction" className={`font-label-sm ${location.pathname === '/construction' ? 'text-secondary font-bold' : 'text-primary dark:text-inverse-primary hover:text-secondary-fixed'} transition-colors`}>Construction</Link>
                         <Link to="/elevators" className={`font-label-sm ${location.pathname === '/elevators' ? 'text-secondary font-bold' : 'text-primary dark:text-inverse-primary hover:text-secondary-fixed'} transition-colors`}>Elevator Parts</Link>
                         <Link to="/projects" className={`font-label-sm ${location.pathname === '/projects' ? 'text-secondary font-bold' : 'text-primary dark:text-inverse-primary hover:text-secondary-fixed'} transition-colors`}>Projects</Link>
-                        <Link to="/projects" className="font-label-sm text-secondary-fixed font-bold">Get a Quote</Link>
+                        <Link to="/contact" className={`font-label-sm ${location.pathname === '/contact' ? 'text-secondary font-bold' : 'text-primary dark:text-inverse-primary hover:text-secondary-fixed'} transition-colors`}>Contact</Link>
+                        <Link to="/contact" className="font-label-sm text-secondary-fixed font-bold">Get a Quote</Link>
                     </div>
                 </div>
             )}
