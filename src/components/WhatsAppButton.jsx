@@ -96,7 +96,7 @@ const WhatsAppButton = () => {
       >
         {/* Official WhatsApp Brand Icon (inline SVG) */}
         <img
-          src="https://drive.google.com/uc?export=view&id=19n1gJ5G2GAFO8dLjxJoxugS7PFG1WD4N"
+          src="https://res.cloudinary.com/dfz1e42mm/image/upload/v1792856165/pngegg.png"
           alt="WhatsApp"
           width="28"
           height="28"
